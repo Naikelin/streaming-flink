@@ -16,6 +16,7 @@ def dsWaze():
         properties={'bootstrap.servers': 'localhost:9092', 'group.id': 'CG1'})
 
     ds = env.add_source(kafka_source)
+
     ds.map(lambda x: Row(x), output_type=Types.ROW([Types.STRING()])) \
         .print()
 
