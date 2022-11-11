@@ -1,8 +1,8 @@
-FROM flink:1.16
+FROM flink:1.15.2
 
 RUN apt-get update -y && \
-apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev libffi-dev
-RUN wget https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz && \
+apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev libffi-dev && \
+wget https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz && \
 tar -xvf Python-3.7.9.tgz && \
 cd Python-3.7.9 && \
 ./configure --without-tests --enable-shared && \
